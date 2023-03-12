@@ -9,9 +9,9 @@ namespace MyPersonalGallery.Controllers
     [ApiController]
     public class ImagesController : ControllerBase
     {
-        public ImageService _imageService;
+        public IImageService _imageService;
 
-        public ImagesController(ImageService imageService)
+        public ImagesController(IImageService imageService)
         {
             _imageService = imageService;
         }
@@ -22,5 +22,20 @@ namespace MyPersonalGallery.Controllers
             var images = _imageService.GetAllImages();
             return Ok(images);
         }
+
+        [HttpPost("insert")]
+        public ActionResult<ImageUrl> InsertOne(ImageUrl imageUrl)
+        {
+            var result = _imageService.CreateOne(imageUrl);
+            return Ok(result);
+        }
+
+        //[HttpGet]
+        //public ActionResult Download()
+        //{
+        //    var bunnyCDNStorage = new BunnyCDNStorage("mygallery", "dbf09da0-1045-41d1-8bdeb58ae048-9f95-4e58", "de");
+        //    await bunnyCDNStorage.DownloadObjectAsStreamAsync("/storagezonename/helloworld.txt");
+        //    return Ok();
+        //}
     }
 }

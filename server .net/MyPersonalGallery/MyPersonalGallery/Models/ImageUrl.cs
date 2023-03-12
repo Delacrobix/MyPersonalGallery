@@ -2,11 +2,12 @@
 
 namespace MyPersonalGallery.Models
 {
+    [BsonIgnoreExtraElements]
     public class ImageUrl
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public int Id { get; set; }
+        public string Id { get; set; } = string.Empty;
 
         [BsonElement("url")]
         public string Url { get; set; } = string.Empty;
