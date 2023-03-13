@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("politica_1",
         policy =>
         {
-            policy.WithOrigins("http://localhost:4000", "https://delacrobix.github.io/MyPersonalGallery")
+            policy.WithOrigins("http://localhost:4000", "https://jeffrmgallery.netlify.app")
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowAnyOrigin();
