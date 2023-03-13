@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/ImageGallery.css";
+const LOCAL = process.env.REACT_APP_BACKEND_URL;
 
 const ImageGallery = () => {
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
-  const LOCAL = "https://localhost:7286";
 
   useEffect(() => {
     const getImages = async () => {
@@ -34,7 +34,7 @@ const ImageGallery = () => {
       let matrix = [];
       let array = [];
       let aux = 0;
-      let floor = Math.ceil(data.length/4);
+      let floor = Math.ceil(data.length / 4);
 
       for (let i = 0; i < data.length; i++) {
         array.push(data[i]);
@@ -48,10 +48,10 @@ const ImageGallery = () => {
         }
       }
 
-      for(let i = 0; i < array.length; i++) {
-        matrix[Math.floor(Math.random()*matrix.length)].push(array[i]);
+      for (let i = 0; i < array.length; i++) {
+        matrix[Math.floor(Math.random() * matrix.length)].push(array[i]);
       }
-      
+
       setImages(matrix);
     })();
   }, []);
@@ -80,19 +80,6 @@ const ImageGallery = () => {
       })}
     </div>
   );
-  // return (
-  //   <div className="row">
-  //     {images.map((image) => (
-  //       <div
-  //         className="col-md-4 p-1 card-image"
-  //         onClick={() => navigate(`/images/${image.id}`)}
-  //         key={image.id}
-  //       >
-  //         <img src={image.urlThumbnail} className="img-fluid" alt={image.title} />
-  //       </div>
-  //     ))}
-  //   </div>
-  // );
 };
 
 export default ImageGallery;

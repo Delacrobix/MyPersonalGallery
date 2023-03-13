@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import "../css/imageDetail.css"
+import "../css/imageDetail.css";
+
+const LOCAL = process.env.REACT_APP_BACKEND_URL;
 
 const ImageDetail = () => {
-  const LOCAL = process.env.REACT_APP_BACKEND_URL;
   const params = useParams();
   const [image, setImages] = useState({
     title: "",
@@ -23,12 +24,12 @@ const ImageDetail = () => {
           return res.json();
         })
         .then((data) => {
-          _data = data; 
+          _data = data;
         })
         .catch((err) => {
           console.error(err);
         });
-        
+
       return _data;
     };
     (async () => {
@@ -41,10 +42,16 @@ const ImageDetail = () => {
       <div className="">
         <div className="card bg-dark">
           <div className="card-body">
-            <img src={image.urlFullScale} alt={image.title} className="card-img-top" />
+            <img
+              src={image.urlFullScale}
+              alt={image.title}
+              className="card-img-top"
+            />
             <div className="card-body">
               <h3>{image.title}</h3>
-              <Link id="link-detail" to="/">Regresar</Link>
+              <Link id="link-detail" to="/">
+                Regresar
+              </Link>
             </div>
           </div>
         </div>
