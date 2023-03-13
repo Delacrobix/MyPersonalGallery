@@ -10,6 +10,12 @@ namespace MyPersonalGallery.Models
         public string Id { get; set; } = string.Empty;
 
         [BsonElement("url")]
-        public string Url { get; set; } = string.Empty;
+        public string UrlThumbnail { get; set; } = string.Empty;
+
+        [BsonElement("urlFullScale")]
+        public string UrlFullScale { get; set; } = string.Empty;
+
+        [BsonElement("title")] 
+        public string Title { get; set; } = String.Empty;
     }
 }

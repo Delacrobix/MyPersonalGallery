@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyPersonalGallery.Models;
 using MyPersonalGallery.Services;
+using System.Diagnostics;
 
 namespace MyPersonalGallery.Controllers
 {
@@ -16,6 +17,20 @@ namespace MyPersonalGallery.Controllers
             _imageService = imageService;
         }
 
+        [HttpGet("works")]
+        public IActionResult Get()
+        {
+            var x = "Enviado";
+            return Ok(x);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetImageById(String id)
+        {
+            var image = _imageService.GetById(id);
+            return Ok(image);
+        }
+
         [HttpGet("get-all")]
         public ActionResult<List<ImageUrl>> GetAllImages()
         {
@@ -23,11 +38,30 @@ namespace MyPersonalGallery.Controllers
             return Ok(images);
         }
 
-        [HttpPost("insert")]
+        [HttpPost("insert-one")]
         public ActionResult<ImageUrl> InsertOne(ImageUrl imageUrl)
         {
             var result = _imageService.CreateOne(imageUrl);
             return Ok(result);
+        }
+
+        [HttpPost("insert")]
+        public ActionResult<ImageUrl> Insert(List<ImageUrl> imageList)
+        {
+            foreach(var image in imageList)
+            {
+                try
+                {
+                    _imageService.CreateOne(image);
+                } catch(Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                    return BadRequest(ex.Message);
+                }
+
+            }
+
+            return Ok(imageList);
         }
 
         //[HttpGet]

@@ -13,10 +13,6 @@ namespace MyPersonalGallery.Services
 
             var database = mongoClient.GetDatabase(gallerySettings.Database);
             _imagesUrl = database.GetCollection<ImageUrl>(gallerySettings.Collection);
-
-            Debug.WriteLine("DATA 1: ", gallerySettings.ConnectionString);
-            Debug.WriteLine("DATA 2: ", gallerySettings.Collection);
-            Debug.WriteLine("DATA 3: ", gallerySettings.Database);
         }
 
         public List<ImageUrl> GetAllImages()

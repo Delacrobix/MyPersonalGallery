@@ -1,6 +1,5 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using MyPersonalGallery.Controllers;
 using MyPersonalGallery.Models;
 using MyPersonalGallery.Services;
 
@@ -14,15 +13,20 @@ builder.Services.AddSingleton<IMongoClient>(s => new MongoClient(builder.Configu
 builder.Services.AddScoped<IImageService, ImageService>();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.Configure<GallerySettings>(Configuration.GetSection(nameof(GallerySettings)));
-
-//builder.Services.AddSingleton<ImageService>();
-//builder.Services.AddTransient<ImagesController>();
-//builder.Services.AddSingleton<IGallerySettings>( d => d.GetRequiredService<IOptions<GallerySettings>>().Value);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("politica_1",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4000")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin();
+        });
+});
 
 var app = builder.Build();
 
@@ -33,7 +37,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("politica_1");
+
 app.UseHttpsRedirection();
+
+app.UseRouting();
 
 app.UseAuthorization();
 
