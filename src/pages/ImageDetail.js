@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import "../css/imageDetail.css"
 
 const ImageDetail = () => {
-  const LOCAL = "https://localhost:7286";
+  const LOCAL = process.env.REACT_APP_BACKEND_URL;
   const params = useParams();
   const [image, setImages] = useState({
     title: "",
@@ -28,7 +28,7 @@ const ImageDetail = () => {
         .catch((err) => {
           console.error(err);
         });
-
+        
       return _data;
     };
     (async () => {
