@@ -27,7 +27,13 @@ namespace MyPersonalGallery.Controllers
         [HttpGet("{id}")]
         public IActionResult GetImageById(String id)
         {
+            if(String.IsNullOrEmpty(id) || id == ":id")
+            {
+                return BadRequest("The id is empty.");
+            }
+
             var image = _imageService.GetById(id);
+
             return Ok(image);
         }
 

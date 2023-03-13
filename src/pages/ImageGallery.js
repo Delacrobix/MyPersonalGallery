@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../css/ImageGallery.css";
 
 const ImageGallery = () => {
   const [images, setImages] = useState([]);
@@ -27,24 +28,71 @@ const ImageGallery = () => {
 
       return _data;
     };
+
     (async () => {
-      setImages(await getImages());
+      const data = await getImages();
+      let matrix = [];
+      let array = [];
+      let aux = 0;
+      let floor = Math.ceil(data.length/4);
+
+      for (let i = 0; i < data.length; i++) {
+        array.push(data[i]);
+
+        aux++;
+
+        if (aux > floor) {
+          aux = 0;
+          matrix.push(array);
+          array = [];
+        }
+      }
+
+      for(let i = 0; i < array.length; i++) {
+        matrix[Math.floor(Math.random()*matrix.length)].push(array[i]);
+      }
+      
+      setImages(matrix);
     })();
   }, []);
 
   return (
-    <div className="row">
-      {images.map((image) => (
-        <div
-          className="col-md-4 p-1 card-image"
-          onClick={() => navigate(`/images/${image.id}`)}
-          key={image.id}
-        >
-          <img src={image.url} className="img-fluid" alt={image.title} />
-        </div>
-      ))}
+    <div className="row-n">
+      {images.map((arr) => {
+        return (
+          <div className="column" key={Math.random()}>
+            {arr.map((image) => {
+              return (
+                <div
+                  onClick={() => navigate(`/images/${image.id}`)}
+                  key={image.id}
+                >
+                  <img
+                    src={image.urlThumbnail}
+                    className="image-cell"
+                    alt={image.title}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
     </div>
   );
+  // return (
+  //   <div className="row">
+  //     {images.map((image) => (
+  //       <div
+  //         className="col-md-4 p-1 card-image"
+  //         onClick={() => navigate(`/images/${image.id}`)}
+  //         key={image.id}
+  //       >
+  //         <img src={image.urlThumbnail} className="img-fluid" alt={image.title} />
+  //       </div>
+  //     ))}
+  //   </div>
+  // );
 };
 
 export default ImageGallery;

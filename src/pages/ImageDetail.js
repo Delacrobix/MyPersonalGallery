@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import "../css/imageDetail.css"
 
 const ImageDetail = () => {
   const LOCAL = "https://localhost:7286";
@@ -22,7 +23,7 @@ const ImageDetail = () => {
           return res.json();
         })
         .then((data) => {
-          _data = data;
+          _data = data; 
         })
         .catch((err) => {
           console.error(err);
@@ -37,12 +38,13 @@ const ImageDetail = () => {
 
   return (
     <div className="row">
-      <div className="col-md-4 offset-md-4">
+      <div className="">
         <div className="card bg-dark">
           <div className="card-body">
-            <img src={image.url} alt={image.title} className="card-img-top" />
+            <img src={image.urlFullScale} alt={image.title} className="card-img-top" />
             <div className="card-body">
               <h3>{image.title}</h3>
+              <Link id="link-detail" to="/">Regresar</Link>
             </div>
           </div>
         </div>

@@ -27,18 +27,18 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/form">
+              <Link className="nav-link" to="/">
                 Animals
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/images/:id">
+              <Link className="nav-link" to="/">
                 People
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
-                All
+                About me
               </Link>
             </li>
             <li className="nav-item">
