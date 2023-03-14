@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+
 import "../css/imageDetail.css";
 
 const LOCAL = process.env.REACT_APP_BACKEND_URL;
@@ -32,6 +33,7 @@ const ImageDetail = () => {
 
       return _data;
     };
+
     (async () => {
       setImages(await getImage());
     })();
@@ -49,7 +51,7 @@ const ImageDetail = () => {
             />
             <div className="card-body">
               <h3>{image.title}</h3>
-              <Link id="link-detail" to="/home">
+              <Link id="link-detail" to="/">
                 Regresar
               </Link>
             </div>
