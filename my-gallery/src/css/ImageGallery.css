@@ -1,0 +1,38 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.image-cell{
+  width: 100%;
+}
+
+.row-n{
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+}
+
+.column{
+  flex: 10%;
+  padding: 3px;
+}
+
+.column div .image-cell{
+  margin-top: 5px;
+}
+
+.image-cell:hover{
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform:scale(1.1);
+}
+
+.column div{
+  overflow: hidden;
+  margin-top: 5px;
+}
