@@ -49,7 +49,7 @@ const ImageDetail = () => {
             />
             <div className="card-body">
               <h3>{image.title}</h3>
-              <Link id="link-detail" to="/">
+              <Link id="link-detail" to="/home">
                 Regresar
               </Link>
             </div>
