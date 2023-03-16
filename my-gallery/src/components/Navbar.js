@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
@@ -22,27 +24,29 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
+              <Link className="nav-link active" aria-current="page" to="/home">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" onClick={() => navigate("/home/animals") } to="home/animals">
                 Animals
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" onClick={() => navigate(`/home/people`)} to="/home/people">
                 People
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
-                About me
+              <Link className="nav-link" onClick={() => navigate(`/home/others`)} to="/home/others">
+                Others
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link disabled">Disabled</Link>
+              <Link className="nav-link active" aria-current="page" to="/casa">
+                About me
+              </Link>
             </li>
           </ul>
         </div>

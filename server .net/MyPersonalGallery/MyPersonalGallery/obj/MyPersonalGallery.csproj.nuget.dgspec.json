@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROGRAMACION\\Curriculum\\MyGallery\\my-gallery\\server .net\\MyPersonalGallery\\MyPersonalGallery\\MyPersonalGallery.csproj": {}
+    "D:\\PROGRAMACION\\Curriculum\\MyGallery\\server .net\\MyPersonalGallery\\MyPersonalGallery\\MyPersonalGallery.csproj": {}
   },
   "projects": {
-    "D:\\PROGRAMACION\\Curriculum\\MyGallery\\my-gallery\\server .net\\MyPersonalGallery\\MyPersonalGallery\\MyPersonalGallery.csproj": {
+    "D:\\PROGRAMACION\\Curriculum\\MyGallery\\server .net\\MyPersonalGallery\\MyPersonalGallery\\MyPersonalGallery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROGRAMACION\\Curriculum\\MyGallery\\my-gallery\\server .net\\MyPersonalGallery\\MyPersonalGallery\\MyPersonalGallery.csproj",
+        "projectUniqueName": "D:\\PROGRAMACION\\Curriculum\\MyGallery\\server .net\\MyPersonalGallery\\MyPersonalGallery\\MyPersonalGallery.csproj",
         "projectName": "MyPersonalGallery",
-        "projectPath": "D:\\PROGRAMACION\\Curriculum\\MyGallery\\my-gallery\\server .net\\MyPersonalGallery\\MyPersonalGallery\\MyPersonalGallery.csproj",
+        "projectPath": "D:\\PROGRAMACION\\Curriculum\\MyGallery\\server .net\\MyPersonalGallery\\MyPersonalGallery\\MyPersonalGallery.csproj",
         "packagesPath": "C:\\Users\\Jeffr\\.nuget\\packages\\",
-        "outputPath": "D:\\PROGRAMACION\\Curriculum\\MyGallery\\my-gallery\\server .net\\MyPersonalGallery\\MyPersonalGallery\\obj\\",
+        "outputPath": "D:\\PROGRAMACION\\Curriculum\\MyGallery\\server .net\\MyPersonalGallery\\MyPersonalGallery\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jeffr\\AppData\\Roaming\\NuGet\\NuGet.Config",

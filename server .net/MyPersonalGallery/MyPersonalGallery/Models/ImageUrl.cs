@@ -9,13 +9,17 @@ namespace MyPersonalGallery.Models
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string Id { get; set; } = string.Empty;
 
+        [BsonElement("title")] 
+        public string Title { get; set; } = String.Empty;
+
+        [BsonElement("tag")]
+        public string Tag { get; set; } = String.Empty;
+            
         [BsonElement("urlThumbnail")]
         public string UrlThumbnail { get; set; } = string.Empty;
 
         [BsonElement("urlFullScale")]
         public string UrlFullScale { get; set; } = string.Empty;
 
-        [BsonElement("title")] 
-        public string Title { get; set; } = String.Empty;
     }
 }

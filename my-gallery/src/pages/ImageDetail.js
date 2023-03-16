@@ -1,41 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { getImage } from "../controllers/ImagesController";
 
 import "../css/imageDetail.css";
 
-const LOCAL = process.env.REACT_APP_BACKEND_URL;
-
 const ImageDetail = () => {
   const params = useParams();
-  const [image, setImages] = useState({
-    title: "",
-    downloadUrl: "",
-  });
+  const [image, setImages] = useState([]);
 
   useEffect(() => {
-    const getImage = async () => {
-      let _data;
-      await fetch(`${LOCAL}/api/images/${params.id}`, {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          _data = data;
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-
-      return _data;
-    };
-
     (async () => {
-      setImages(await getImage());
+      setImages(await getImage(params.id));
     })();
   });
 
