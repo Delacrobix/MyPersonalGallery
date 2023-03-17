@@ -45,10 +45,8 @@ export async function getImage(id) {
 }
 
 export function filterImages(tag, images) {
-  //tag = tag.slice(1, tag.length)
-
   let imagesFiltered;
-
+  
   switch (tag) {
     case "animals":
       imagesFiltered = filterByTag(tag, images);

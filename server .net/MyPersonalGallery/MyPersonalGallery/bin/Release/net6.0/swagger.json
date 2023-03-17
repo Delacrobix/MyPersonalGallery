@@ -163,13 +163,16 @@
         "id": {
           "type": "string"
         },
+        "title": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        },
         "urlThumbnail": {
           "type": "string"
         },
         "urlFullScale": {
-          "type": "string"
-        },
-        "title": {
           "type": "string"
         }
       }

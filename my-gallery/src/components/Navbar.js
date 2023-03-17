@@ -25,16 +25,16 @@ const Navbar = () => {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/home">
-                Home
+                All
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" onClick={() => navigate("/home/animals") } to="home/animals">
+            <div className="nav-item">
+              <Link className="nav-link" to="/home/animals">
                 Animals
               </Link>
-            </li>
+            </div>
             <li className="nav-item">
-              <Link className="nav-link" onClick={() => navigate(`/home/people`)} to="/home/people">
+              <Link className="nav-link" to="/home/people">
                 People
               </Link>
             </li>
@@ -44,7 +44,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/casa">
+              <Link className="nav-link active" aria-current="page" to="/home/about">
                 About me
               </Link>
             </li>
