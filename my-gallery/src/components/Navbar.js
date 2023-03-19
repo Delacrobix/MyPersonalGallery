@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/home">
           My personal gallery
         </Link>
         <button
@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/home">
+              <Link className="nav-link" aria-current="page" to="/home">
                 All
               </Link>
             </li>
@@ -39,12 +39,20 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" onClick={() => navigate(`/home/others`)} to="/home/others">
+              <Link
+                className="nav-link"
+                onClick={() => navigate(`/home/others`)}
+                to="/home/others"
+              >
                 Others
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/home/about">
+              <Link
+                className="nav-link"
+                aria-current="page"
+                to="/home/about"
+              >
                 About me
               </Link>
             </li>

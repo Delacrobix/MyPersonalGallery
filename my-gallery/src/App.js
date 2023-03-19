@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap"
 import { Route, Routes } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -15,7 +16,7 @@ function App() {
         <Routes>
           <Route path="home/:tag/*" element={<ImageGallery />} />
           <Route path="/home" element={<ImageGallery />} />
-          <Route path="images/:id/*" element={<ImageDetail />} />
+          <Route path="images/:tag/:id/*" element={<ImageDetail />} />
           <Route path="home/about" element={<AboutMe />} />
         </Routes>
       </div>

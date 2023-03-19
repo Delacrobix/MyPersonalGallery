@@ -8,16 +8,30 @@ import "../css/ImageGallery.css";
 const ImageGallery = () => {
   const { tag } = useParams();
   const [images, setImages] = useState([]);
-  
+
   useEffect(() => {
     (async () => {
       const result = await getAllImages();
       const data = filterImages(tag, result);
-      
+
       let matrix = [];
-      let floor = Math.ceil(data.length / 4);
+      let floor;
       let array = [];
       let aux = 0;
+
+      if (
+        navigator.userAgent.match(/Android/i) ||
+        navigator.userAgent.match(/webOS/i) ||
+        navigator.userAgent.match(/iPhone/i) ||
+        navigator.userAgent.match(/iPad/i) ||
+        navigator.userAgent.match(/iPod/i) ||
+        navigator.userAgent.match(/BlackBerry/i) ||
+        navigator.userAgent.match(/Windows Phone/i)
+      ) {
+        floor = Math.ceil(data.length / 3);
+      } else {
+        floor = Math.ceil(data.length / 4);
+      }
 
       for (let i = 0; i < data.length; i++) {
         array.push(data[i]);
@@ -34,7 +48,7 @@ const ImageGallery = () => {
       for (let i = 0; i < array.length; i++) {
         matrix[Math.floor(Math.random() * matrix.length)].push(array[i]);
       }
-      
+
       setImages(matrix);
     })();
   }, [tag]);
@@ -50,6 +64,7 @@ const ImageGallery = () => {
                   id={image.id}
                   urlThumbnail={image.urlThumbnail}
                   title={image.title}
+                  tag={tag}
                 />
               );
             })}

@@ -5,12 +5,12 @@ import { getImage } from "../controllers/ImagesController";
 import "../css/imageDetail.css";
 
 const ImageDetail = () => {
-  const params = useParams();
+  const {id, tag} = useParams();
   const [image, setImages] = useState([]);
 
   useEffect(() => {
     (async () => {
-      setImages(await getImage(params.id));
+      setImages(await getImage(id));
     })();
   });
 
@@ -26,7 +26,7 @@ const ImageDetail = () => {
             />
             <div className="card-body">
               <h3>{image.title}</h3>
-              <Link id="link-detail" to="/">
+              <Link id="link-detail" to={`/home/${tag}`}>
                 Regresar
               </Link>
             </div>
