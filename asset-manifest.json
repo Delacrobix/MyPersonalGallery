@@ -1,21 +1,24 @@
 {
   "files": {
     "main.css": "/MyPersonalGallery/static/css/main.62bc7d64.css",
-    "main.js": "/MyPersonalGallery/static/js/main.f5716e92.js",
-    "static/css/189.f1bf1c73.chunk.css": "/MyPersonalGallery/static/css/189.f1bf1c73.chunk.css",
-    "static/js/189.098c16d1.chunk.js": "/MyPersonalGallery/static/js/189.098c16d1.chunk.js",
+    "main.js": "/MyPersonalGallery/static/js/main.76e628cd.js",
+    "static/css/861.9f3be280.chunk.css": "/MyPersonalGallery/static/css/861.9f3be280.chunk.css",
+    "static/js/861.671b059c.chunk.js": "/MyPersonalGallery/static/js/861.671b059c.chunk.js",
     "static/js/787.279d11af.chunk.js": "/MyPersonalGallery/static/js/787.279d11af.chunk.js",
-    "static/css/342.9afd456f.chunk.css": "/MyPersonalGallery/static/css/342.9afd456f.chunk.css",
+    "static/css/221.aad03d46.chunk.css": "/MyPersonalGallery/static/css/221.aad03d46.chunk.css",
+    "static/js/221.98251010.chunk.js": "/MyPersonalGallery/static/js/221.98251010.chunk.js",
+    "static/media/my website.png": "/MyPersonalGallery/static/media/my website.74b596bd64da2b91fcdd.png",
     "index.html": "/MyPersonalGallery/index.html",
     "main.62bc7d64.css.map": "/MyPersonalGallery/static/css/main.62bc7d64.css.map",
-    "main.f5716e92.js.map": "/MyPersonalGallery/static/js/main.f5716e92.js.map",
-    "189.f1bf1c73.chunk.css.map": "/MyPersonalGallery/static/css/189.f1bf1c73.chunk.css.map",
-    "189.098c16d1.chunk.js.map": "/MyPersonalGallery/static/js/189.098c16d1.chunk.js.map",
+    "main.76e628cd.js.map": "/MyPersonalGallery/static/js/main.76e628cd.js.map",
+    "861.9f3be280.chunk.css.map": "/MyPersonalGallery/static/css/861.9f3be280.chunk.css.map",
+    "861.671b059c.chunk.js.map": "/MyPersonalGallery/static/js/861.671b059c.chunk.js.map",
     "787.279d11af.chunk.js.map": "/MyPersonalGallery/static/js/787.279d11af.chunk.js.map",
-    "342.9afd456f.chunk.css.map": "/MyPersonalGallery/static/css/342.9afd456f.chunk.css.map"
+    "221.aad03d46.chunk.css.map": "/MyPersonalGallery/static/css/221.aad03d46.chunk.css.map",
+    "221.98251010.chunk.js.map": "/MyPersonalGallery/static/js/221.98251010.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.62bc7d64.css",
-    "static/js/main.f5716e92.js"
+    "static/js/main.76e628cd.js"
   ]
 }
