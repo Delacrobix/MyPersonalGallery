@@ -40,7 +40,7 @@ const Footer = () => {
                 </p>
                 <p className="footer-p">
                   <a
-                    href="https://jeffrm.ga"
+                    href="https://www.jeffrm.com.co"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

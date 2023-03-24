@@ -13,7 +13,7 @@ const AboutMe = () => {
             todas de la autoría de Jeffrey S. Rengifo Marin, no soy fotógrafo,
             simplemente me gusta capturar momentos. Invito al lector a visitar{" "}
             <a
-              href="https://jeffrm.ga"
+              href="https://www.jeffrm.com.co"
               target="_blank"
               rel="noopener noreferrer"
             >
