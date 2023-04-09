@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAB0gjOnJZRki/L3Hjid+HOgAAAAACAAAAAAAQZgAAAAEAACAAAAAGs6sENmx2+rk3d7VIWcfqVS4fMOw8e1oRB7t5DwLtnQAAAAAOgAAAAAIAACAAAAAem/hXBd7fo+6zB5KwxQFVMAt8MNqQW24Tm3Ox25cAiyAAAAA3i5qAt0y2qZK/SAUqO0HE2FZZaci/RPk7720IZLY4F0AAAAD35Rn+gQXXbHPPgnMv+qQ5DgF+6xyC7CsWEtbkjAzG49AgJFXScZdWp8rFf0+a3vMViqg/V3ajr35107g2fqjX</EncryptedPassword>
+    <_PublishTargetUrl>ftp://198.37.116.30/www.MyGallery.somee.com</_PublishTargetUrl>
+    <History>True|2023-04-09T17:38:49.8150922Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>03/10/2023 17:22:00</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>03/11/2023 18:14:00</publishTime>
+    </File>
+    <File Include="AWSSDK.Core.dll">
+      <publishTime>11/09/2022 11:47:34</publishTime>
+    </File>
+    <File Include="AWSSDK.SecurityToken.dll">
+      <publishTime>11/09/2022 11:47:36</publishTime>
+    </File>
+    <File Include="DnsClient.dll">
+      <publishTime>06/10/2022 15:37:22</publishTime>
+    </File>
+    <File Include="Microsoft.OpenApi.dll">
+      <publishTime>08/29/2020 15:14:12</publishTime>
+    </File>
+    <File Include="MongoDB.Bson.dll">
+      <publishTime>01/27/2023 13:46:12</publishTime>
+    </File>
+    <File Include="MongoDB.Driver.Core.dll">
+      <publishTime>01/27/2023 13:46:22</publishTime>
+    </File>
+    <File Include="MongoDB.Driver.dll">
+      <publishTime>01/27/2023 13:46:38</publishTime>
+    </File>
+    <File Include="MongoDB.Libmongocrypt.dll">
+      <publishTime>01/21/2023 09:17:00</publishTime>
+    </File>
+    <File Include="MyPersonalGallery.deps.json">
+      <publishTime>04/09/2023 12:37:48</publishTime>
+    </File>
+    <File Include="MyPersonalGallery.dll">
+      <publishTime>04/09/2023 12:37:48</publishTime>
+    </File>
+    <File Include="MyPersonalGallery.exe">
+      <publishTime>04/09/2023 12:37:48</publishTime>
+    </File>
+    <File Include="MyPersonalGallery.pdb">
+      <publishTime>04/09/2023 12:37:48</publishTime>
+    </File>
+    <File Include="MyPersonalGallery.runtimeconfig.json">
+      <publishTime>04/09/2023 12:37:48</publishTime>
+    </File>
+    <File Include="runtimes/linux/native/libmongocrypt.so">
+      <publishTime>01/20/2023 18:11:48</publishTime>
+    </File>
+    <File Include="runtimes/osx/native/libmongocrypt.dylib">
+      <publishTime>01/20/2023 18:12:06</publishTime>
+    </File>
+    <File Include="runtimes/win/native/mongocrypt.dll">
+      <publishTime>01/20/2023 18:11:14</publishTime>
+    </File>
+    <File Include="SharpCompress.dll">
+      <publishTime>11/22/2021 04:21:32</publishTime>
+    </File>
+    <File Include="Snappier.dll">
+      <publishTime>01/23/2021 12:43:32</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.Swagger.dll">
+      <publishTime>10/16/2021 07:54:10</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerGen.dll">
+      <publishTime>10/16/2021 07:54:36</publishTime>
+    </File>
+    <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
+      <publishTime>10/16/2021 07:54:30</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>04/09/2023 12:37:58</publishTime>
+    </File>
+    <File Include="ZstdSharp.dll">
+      <publishTime>08/02/2022 14:04:30</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,9 +1,9 @@
-const LOCAL = process.env.REACT_APP_BACKEND_URL;
+const SEVER = process.env.REACT_APP_BACKEND_URL;
 
 export async function getAllImages() {
   let _data;
 
-  await fetch(`${LOCAL}/api/images/get-all`, {
+  await fetch(`${SEVER}/api/images/get-all`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export async function getAllImages() {
 export async function getImage(id) {
   let _data;
 
-  await fetch(`${LOCAL}/api/images/${id}`, {
+  await fetch(`${SEVER}/api/images/${id}`, {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
