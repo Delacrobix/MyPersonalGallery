@@ -18,14 +18,14 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("politica_1",
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:4000", "https://delacrobix.github.io/MyPersonalGallery/")
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowAnyOrigin();
-        });
+  options.AddPolicy("politica_1",
+      policy =>
+      {
+        policy.WithOrigins("http://localhost:4000", "https://delacrobix.github.io/MyPersonalGallery/")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowAnyOrigin();
+      });
 });
 
 var app = builder.Build();
@@ -33,8 +33,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+  app.UseSwagger();
+  app.UseSwaggerUI();
 }
 
 app.UseCors("politica_1");

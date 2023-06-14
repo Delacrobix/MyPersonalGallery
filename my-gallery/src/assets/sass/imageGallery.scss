@@ -1,0 +1,16 @@
+.row-n {
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+
+  .column {
+    flex: 10%;
+    padding: 3px;
+
+    div {
+      margin-top: 5px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+  }
+}

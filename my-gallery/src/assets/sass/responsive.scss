@@ -1,0 +1,63 @@
+//Footer
+@media screen and (max-width: 850px) {
+  .sub-footer-heading h1 {
+    font-size: 44px;
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .sub-footer-heading h1 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .sub-footer-links div {
+    margin: 1rem 0;
+  }
+
+  .sub-footer-btn p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .sub-footer-below {
+    flex-direction: column;
+    justify-content: left;
+  }
+
+  .sub-footer-below-links {
+    flex-direction: column;
+  }
+
+  .sub-footer-below-links p {
+    margin-left: 0rem;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .sub-footer-heading h1 {
+    font-size: 27px;
+    line-height: 38px;
+  }
+}
+
+//About me
+@media screen and (max-width: 850px) {
+  .about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    font-size: 15px;
+    font-style: unset;
+  }
+
+  .text-container {
+    background: #3d3d3d;
+    padding: 15px;
+    max-width: 90%;
+    border-radius: 10px;
+  }
+}

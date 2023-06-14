@@ -1,17 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { getAllImages, filterImages } from "../controllers/ImagesController";
-import { useParams } from "react-router-dom";
-import ImageCell from "../components/ImageCell";
-
-import "../css/ImageGallery.css";
+import React, { useEffect, useState } from 'react';
+import {
+  getAllThumbnails,
+  filterImages,
+} from '../controllers/ImagesController';
+import { useParams } from 'react-router-dom';
+import ImageCell from '../components/ImageCell';
+import ErrorAlert from '../components/feedback/errorAlert';
+import Loading from '../components/feedback/loading';
 
 const ImageGallery = () => {
   const { tag } = useParams();
   const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const result = await getAllImages();
+      setIsLoading(true);
+
+      const result = await getAllThumbnails();
+
+      setIsLoading(false);
       const data = filterImages(tag, result);
 
       let matrix = [];
@@ -19,6 +27,7 @@ const ImageGallery = () => {
       let array = [];
       let aux = 0;
 
+      //Responsive design
       if (
         navigator.userAgent.match(/Android/i) ||
         navigator.userAgent.match(/webOS/i) ||
@@ -54,23 +63,27 @@ const ImageGallery = () => {
   }, [tag]);
 
   return (
-    <div className="row-n">
-      {images.map((arr) => {
-        return (
-          <div className="column" key={Math.random()}>
-            {arr.map((image) => {
-              return (
-                <ImageCell
-                  id={image.id}
-                  urlThumbnail={image.urlThumbnail}
-                  title={image.title}
-                  tag={tag}
-                />
-              );
-            })}
-          </div>
-        );
-      })}
+    <div className='row-n'>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        images.map((arr) => {
+          return (
+            <div className='column' key={Math.random()}>
+              {arr.map((image) => {
+                return (
+                  <ImageCell
+                    id={image.id}
+                    imageData={image.imageData}
+                    title={image.title}
+                    tag={tag}
+                  />
+                );
+              })}
+            </div>
+          );
+        })
+      )}
     </div>
   );
 };

@@ -1,12 +1,12 @@
-import React, { lazy } from "react";
-import ReactDOM from "react-dom/client";
-import reportWebVitals from "./reportWebVitals";
-import { HashRouter } from "react-router-dom";
+import React, { lazy } from 'react';
+import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
+import { HashRouter } from 'react-router-dom';
 
-import "./index.css";
+import './assets/css/styles.css';
 
-const App = lazy(() => import("./App"));
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const App = lazy(() => import('./App'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <HashRouter>

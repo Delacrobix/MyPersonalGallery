@@ -2,16 +2,20 @@
 
 namespace MyPersonalGallery.Services
 {
-    public interface IImageService
-    {
-        List<ImageUrl> GetAllImages();
+  public interface IImageService
+  {
+    Task<IEnumerable<MongoImage>> GetAllImages();
 
-        ImageUrl GetById(string id);
+    Task<IEnumerable<MongoImage>> GetAllThumbnails();
 
-        ImageUrl CreateOne(ImageUrl imageUrl);
+    Task<MongoImage> GetById(string id);
 
-        void DeleteById(string id);
+    Task<MongoImage> GetByName(string name);
 
-        void UpdateById(string id, ImageUrl imageUrl);
-    }
+    byte[] GetImageData(string path);
+
+    Task<MongoImage> InsertImage(MongoImage image);
+
+    IEnumerable<MongoImage> GetImagesInfo(string galleryPath);
+  }
 }

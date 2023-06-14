@@ -1,0 +1,15 @@
+//General
+@import './body.scss';
+@import './responsive.scss';
+@import './fonts.scss';
+
+//Components
+@import './footer.scss';
+@import './imageCell.scss';
+@import './loading.scss';
+@import './errorAlert.scss';
+
+//Pages
+@import './imageDetail.scss';
+@import './imageGallery.scss';
+@import './aboutMe.scss';

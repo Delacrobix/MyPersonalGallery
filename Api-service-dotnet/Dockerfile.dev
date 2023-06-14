@@ -1,0 +1,15 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0-focal
+
+WORKDIR /backend/dotnet
+
+COPY *.csproj .
+COPY appsettings.json ./
+
+RUN dotnet restore
+RUN dotnet dev-certs https --trust
+
+COPY . .
+
+EXPOSE 7286
+
+ENTRYPOINT dotnet watch run --urls=http://+:7286 --project MyPersonalGallery.csproj

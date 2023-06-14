@@ -1,12 +1,20 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const ImageCell = ({urlThumbnail, id, title, tag}) => {
+const ImageCell = (props) => {
   const navigate = useNavigate();
-  
+
+  const { imageData, id, title, tag } = props;
+
+  const imageUrl = `data:image/jpeg;base64,${imageData}`;
+
+  function handleClick() {
+    navigate(`/images/${tag}/${title}`);
+  }
+
   return (
-    <div onClick={() => navigate(`/images/${tag}/${id}`)} key={id}>
-      <img src={urlThumbnail} className="image-cell" alt={title} />
+    <div onClick={handleClick} key={id}>
+      <img src={imageUrl} className='image-cell' alt={title} />
     </div>
   );
 };
