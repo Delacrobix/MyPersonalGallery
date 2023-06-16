@@ -18,7 +18,7 @@ namespace MyPersonalGallery.Redis
     public RedisDB()
     {
       _lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
-        ConnectionMultiplexer.Connect("localhost")
+        ConnectionMultiplexer.Connect("localhost:6379")
       );
     }
   }

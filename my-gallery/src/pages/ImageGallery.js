@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { v4 as generateUid } from 'uuid';
 import {
   getAllThumbnails,
   filterImages,
@@ -16,30 +17,14 @@ const ImageGallery = () => {
 
   useEffect(() => {
     (async () => {
-      const cachedImages = localStorage.getItem('images');
+      setIsLoading(true);
+      const result = await getAllThumbnails();
 
-      let result = {};
-
-      if (cachedImages) {
-        setIsLoading(true);
-        result = JSON.parse(cachedImages);
-        setIsLoading(false);
-      } else {
-        setIsLoading(true);
-        result = await getAllThumbnails();
-
-        if (!result) {
-          setError(true);
-        }
-
-        try {
-          localStorage.setItem('images', JSON.stringify(result));
-          setIsLoading(false);
-        } catch (e) {
-          setError(true);
-          throw new Error('Error saving cache files.');
-        }
+      if (!result) {
+        setError(true);
       }
+
+      setIsLoading(false);
 
       //Filter images when the user clicks on some category
       const data = filterImages(tag, result);
@@ -87,16 +72,21 @@ const ImageGallery = () => {
   return (
     <div className='row-n'>
       {error ? (
-        <ErrorAlert />
+        <div className='error-container'>
+          <ErrorAlert />
+        </div>
       ) : isLoading ? (
-        <Loading />
+        <div className='loading-container'>
+          <Loading />
+        </div>
       ) : (
         images.map((arr) => {
           return (
-            <div className='column' key={Math.random()}>
+            <div className='column' key={generateUid()}>
               {arr.map((image) => {
                 return (
                   <ImageCell
+                    key={generateUid()}
                     id={image.id}
                     imageData={image.imageData}
                     title={image.title}

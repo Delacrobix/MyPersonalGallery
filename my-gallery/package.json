@@ -20,6 +20,7 @@
     "react-router-dom": "6.9",
     "react-scripts": "5.0.1",
     "react-viewerjs": "^0.1.9",
+    "uuid": "^9.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -30,7 +31,8 @@
     "server:dev": "nodemon server/index.js --exec babel-node --ignore src",
     "docker:dev": "WATCHPACK_POLLING=true react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "sass-watch": "sass --watch src/assets/sass/main.scss src/assets/css/styles.css"
   },
   "eslintConfig": {
     "extends": [

@@ -23,10 +23,10 @@ export async function getAllThumbnails() {
   return _data;
 }
 
-export async function getImage(name) {
+export async function getImage(title) {
   let _data;
 
-  await fetch(`${SEVER}/api/images/getByName/${name}`, {
+  await fetch(`${SEVER}/api/images/getByTitle/${title}`, {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ export async function getImage(name) {
       // console.log('getImage data: ', data);
     })
     .catch((err) => {
-      throw new Error(err);
+      console.error(err);
     });
 
   return _data;

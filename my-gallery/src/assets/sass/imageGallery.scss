@@ -3,6 +3,21 @@
   flex-direction: row;
   padding: 25px;
 
+  .error-container {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .loading-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 48%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+  }
+
   .column {
     flex: 10%;
     padding: 3px;

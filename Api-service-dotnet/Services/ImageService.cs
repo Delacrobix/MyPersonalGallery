@@ -3,6 +3,7 @@ using MyPersonalGallery.Models;
 using MetadataExtractor;
 using MyPersonalGallery.Redis;
 using System.Text.Json;
+using StackExchange.Redis;
 
 namespace MyPersonalGallery.Services
 {
@@ -19,21 +20,105 @@ namespace MyPersonalGallery.Services
       _redisDb = redisDb;
     }
 
-    public async Task<String> saveImagesToRedis(List<MongoImage> images)
+    public async Task<string> SaveImagesToRedis(List<MongoImage> images, string key)
     {
-      var redisConnection = _redisDb.Connection.GetDatabase();
-      var jsonData = await redisConnection.StringGetAsync("0");
+      var redisConnection = GetRedisDB();
+      var jsonData = await GetAllRedisImages(key);
 
-      if (jsonData.IsNull)
+      if (String.IsNullOrEmpty(jsonData))
       {
-        string jsonString = JsonSerializer.Serialize(images);
-        await redisConnection.StringSetAsync("0", jsonString);
+        try
+        {
+          string jsonSaved = JsonSerializer.Serialize(images);
+          await redisConnection.StringSetAsync(key, jsonSaved);
 
-        return jsonString;
+          return jsonSaved;
+        }
+        catch (Exception e)
+        {
+          throw new Exception("Error saving images to redis: " + e.Message);
+        }
       }
       else
       {
         return jsonData;
+      }
+    }
+
+    public async Task<string> SaveImageToRedis(MongoImage image, string key)
+    {
+      var redisConnection = GetRedisDB();
+      var redisImage = await GetRedisFullScaleImageByKey(key);
+
+      if (redisImage == null)
+      {
+        try
+        {
+          string jsonImage = JsonSerializer.Serialize(image);
+          await redisConnection.StringSetAsync(key, jsonImage);
+
+          return jsonImage;
+        }
+        catch (Exception e)
+        {
+          throw new Exception("Could not save the image to redis database: " + e.Message);
+        }
+      }
+      else
+      {
+        return JsonSerializer.Serialize(redisImage);
+      }
+    }
+
+    public async Task<string> GetAllRedisImages(string key)
+    {
+      var redisConnection = GetRedisDB();
+
+      try
+      {
+        var jsonData = await redisConnection.StringGetAsync(key);
+
+        if (jsonData.IsNull)
+        {
+          return "";
+        }
+        else
+        {
+          return jsonData;
+        }
+      }
+      catch (Exception e)
+      {
+        throw new Exception("Could not access to redis key: " + e.Message);
+      }
+    }
+
+    public async Task<MongoImage> GetRedisFullScaleImageByKey(string key)
+    {
+      var redisConnection = GetRedisDB();
+      string jsonImages = await GetAllRedisImages(key);
+
+      if (String.IsNullOrEmpty(jsonImages))
+      {
+        return null;
+      }
+      else
+      {
+        Console.WriteLine("Image: " + jsonImages);
+        var image = JsonSerializer.Deserialize<MongoImage>(jsonImages);
+        return image;
+      }
+    }
+
+    public IDatabase GetRedisDB()
+    {
+      try
+      {
+        return _redisDb.Connection.GetDatabase();
+      }
+      catch (Exception e)
+      {
+        throw new Exception("Cannot connect to redis database: ", e);
       }
     }
 
@@ -51,13 +136,30 @@ namespace MyPersonalGallery.Services
 
     public async Task<IEnumerable<MongoImage>> GetAllThumbnails()
     {
-      try
+      var redisImages = await GetAllRedisImages("thumbs");
+
+      if (!String.IsNullOrEmpty(redisImages))
       {
-        return await _imagesUrl.Find(d => d.isThumbnail == true).ToListAsync();
+        var thumbnails = JsonSerializer.Deserialize<List<MongoImage>>(redisImages);
+
+        Console.WriteLine("Thumbnails: " + thumbnails);
+
+        return thumbnails;
       }
-      catch (Exception e)
+      else
       {
-        throw new InvalidOperationException("Could not get thumbnails: " + e.Message);
+        try
+        {
+          var thumbnails = await _imagesUrl.Find(d => d.isThumbnail == true).ToListAsync();
+
+          await SaveImagesToRedis(thumbnails, "thumbs");
+
+          return thumbnails;
+        }
+        catch (Exception e)
+        {
+          throw new InvalidOperationException("Could not get thumbnails: " + e.Message);
+        }
       }
     }
 
@@ -149,13 +251,37 @@ namespace MyPersonalGallery.Services
       }
     }
 
-    public async Task<MongoImage> GetByName(string name)
+    public async Task<MongoImage> GetByTitle(string title)
     {
-      try
+      var imageRedis = await GetRedisFullScaleImageByKey(title);
+
+      if (!(imageRedis == null))
       {
-        return await _imagesUrl.Find(x => x.Title == name).FirstOrDefaultAsync();
+        Console.WriteLine("ImageRedis: " + imageRedis.Title);
+        return imageRedis;
       }
-      catch (Exception e) { throw new InvalidOperationException("Could not find image: " + e.Message); }
+      else
+      {
+        try
+        {
+          var imageDatabaseTask = _imagesUrl.Find(x => (x.Title == title) && (x.isThumbnail == false)).FirstOrDefaultAsync();
+          var imageDatabase = await imageDatabaseTask;
+
+          if (imageDatabase is null)
+          {
+            return imageDatabase;
+          }
+          else
+          {
+            await SaveImageToRedis(imageDatabase, imageDatabase.Title);
+            return imageDatabase;
+          }
+        }
+        catch (Exception e)
+        {
+          throw new InvalidOperationException("Could not find image: " + e.Message);
+        }
+      }
     }
   }
 }

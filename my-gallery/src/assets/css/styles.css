@@ -60,7 +60,6 @@ body > #root > div {
     font-style: unset;
   }
   .text-container {
-    background: #3d3d3d;
     padding: 15px;
     max-width: 90%;
     border-radius: 10px;
@@ -287,6 +286,14 @@ body > #root > div {
   position: relative;
   justify-content: center;
 }
+.row .error-container {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+.row .loading-container {
+  margin-top: -5rem;
+  margin-bottom: 18rem;
+}
 .row .card {
   width: 75%;
   margin-bottom: 3rem;
@@ -300,14 +307,14 @@ body > #root > div {
 .row .card .card-body .title-button-container h3 {
   font-size: 2.5rem;
   font-family: "Pacifico", cursive;
-  color: aliceblue;
+  color: #f4eee0;
   margin-bottom: 1.5rem;
 }
 .row .card .card-body .title-button-container #link-detail {
   text-decoration: none;
-  color: black;
+  color: #f4eee0;
   max-width: 100px;
-  background-color: rgb(226, 226, 226);
+  background-color: #6d5d6e;
   cursor: pointer;
   border-radius: 10%;
   padding: 0.5rem;
@@ -321,6 +328,19 @@ body > #root > div {
   display: flex;
   flex-direction: row;
   padding: 25px;
+}
+.row-n .error-container {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.row-n .loading-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 48%;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
 .row-n .column {
   flex: 10%;

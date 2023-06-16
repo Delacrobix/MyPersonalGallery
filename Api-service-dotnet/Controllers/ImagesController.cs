@@ -36,17 +36,25 @@ namespace MyPersonalGallery.Controllers
       }
     }
 
-    [HttpGet("getByName/{name}")]
-    public async Task<ActionResult> GetImageByName(string name)
+    [HttpGet("getByTitle/{title}")]
+    public async Task<ActionResult> GetImageByTitle(string title)
     {
-      if (string.IsNullOrEmpty(name) || name == ":name")
+      if (string.IsNullOrEmpty(title) || title == ":title")
       {
-        return BadRequest("The name cannot be null or empty.");
+        return BadRequest("The title cannot be null or empty.");
       }
       else
       {
-        var image = await _imageService.GetByName(name);
-        return Ok(image);
+        var image = await _imageService.GetByTitle(title);
+
+        if (image is null)
+        {
+          return BadRequest("Title does not exist.");
+        }
+        else
+        {
+          return Ok(image);
+        }
       }
     }
 
