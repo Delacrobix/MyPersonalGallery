@@ -8,6 +8,8 @@ namespace MyPersonalGallery.Services
 
     Task<IEnumerable<MongoImage>> GetAllThumbnails();
 
+    Task<String> saveImagesToRedis(List<MongoImage> images);
+
     Task<MongoImage> GetById(string id);
 
     Task<MongoImage> GetByName(string name);

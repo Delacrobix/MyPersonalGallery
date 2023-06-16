@@ -37,9 +37,10 @@ export async function getImage(name) {
     })
     .then((data) => {
       _data = data;
+      // console.log('getImage data: ', data);
     })
     .catch((err) => {
-      console.error(err);
+      throw new Error(err);
     });
 
   return _data;

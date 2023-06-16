@@ -3,6 +3,7 @@ import React from 'react';
 import linkedIn from '../assets/socialmedia/linkedin.png';
 import myWebsite from '../assets/socialmedia/my website.png';
 import github from '../assets/socialmedia/github.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -17,28 +18,28 @@ const Footer = () => {
             <div className='sub-footer-links-div'>
               <h4 className='footer-h4'>Redes sociales: </h4>
               <div className='social-media'>
-                <p className='footer-p'>
-                  <a
+                <div className='footer-p'>
+                  <Link
                     href='https://www.linkedin.com/in/jeffrey-rerin/'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
                     <p>LinkedIn</p>
                     <img className='footer-img' src={linkedIn} alt='' />
-                  </a>
-                </p>
-                <p className='footer-p'>
-                  <a
+                  </Link>
+                </div>
+                <div className='footer-p'>
+                  <Link
                     href='https://github.com/Delacrobix'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
                     <p>GitHub</p>
                     <img className='footer-img' src={github} alt='' />
-                  </a>
-                </p>
-                <p className='footer-p'>
-                  <a
+                  </Link>
+                </div>
+                <div className='footer-p'>
+                  <Link
                     href='https://www.jeffrm.com.co'
                     target='_blank'
                     rel='noopener noreferrer'
@@ -49,8 +50,8 @@ const Footer = () => {
                       src={myWebsite}
                       alt=''
                     />
-                  </a>
-                </p>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

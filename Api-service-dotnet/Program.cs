@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using MyPersonalGallery.Models;
+using MyPersonalGallery.Redis;
 using MyPersonalGallery.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<GallerySettings>(builder.Configuration.GetSection(nameof(GallerySettings)));
 builder.Services.AddSingleton<IGallerySettings>(sp => sp.GetRequiredService<IOptions<GallerySettings>>().Value);
 builder.Services.AddSingleton<IMongoClient>(s => new MongoClient(builder.Configuration.GetValue<string>("GallerySettings:ConnectionString")));
+builder.Services.AddScoped<IRedisDB, RedisDB>();
 builder.Services.AddScoped<IImageService, ImageService>();
 
 builder.Services.AddControllers();

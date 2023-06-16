@@ -1,33 +1,38 @@
 .row {
-  padding-top: 1%;
+  padding-top: 1rem;
   position: relative;
   justify-content: center;
 
   .card {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 75%;
+    margin-bottom: 3rem;
 
     .card-body {
       text-align: center;
 
-      #link-detail {
-        color: black;
-        max-width: 100px;
-        background-color: aliceblue;
-        cursor: pointer;
-        border-radius: 5%;
-        padding: 5px;
+      .title-button-container {
+        margin: 1rem;
 
         h3 {
+          font-size: 2.5rem;
+          font-family: 'Pacifico', cursive;
           color: aliceblue;
+          margin-bottom: 1.5rem;
         }
 
-        &:hover {
-          transition: all 0.5s ease-in-out;
-          transform: scale(1.2);
+        #link-detail {
+          text-decoration: none;
+          color: black;
+          max-width: 100px;
+          background-color: rgb(226, 226, 226);
+          cursor: pointer;
+          border-radius: 10%;
+          padding: 0.5rem;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.699);
+            transition: all 0.3s ease-in-out;
+          }
         }
       }
     }

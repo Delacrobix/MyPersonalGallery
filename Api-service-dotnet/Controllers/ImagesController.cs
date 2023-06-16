@@ -1,6 +1,5 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
-using MyPersonalGallery.Models;
 using MyPersonalGallery.Models.DTOs;
 using MyPersonalGallery.Services;
 
@@ -24,29 +23,30 @@ namespace MyPersonalGallery.Controllers
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetImageById(string id)
+    public async Task<ActionResult> GetImageById(string id)
     {
       if (String.IsNullOrEmpty(id) || id == ":id")
       {
         return BadRequest("The id cannot be empty.");
       }
-
-      var image = _imageService.GetById(id);
-
-      return Ok(image);
+      else
+      {
+        var image = await _imageService.GetById(id);
+        return Ok(image);
+      }
     }
 
     [HttpGet("getByName/{name}")]
     public async Task<ActionResult> GetImageByName(string name)
     {
-      if (!string.IsNullOrEmpty(name))
+      if (string.IsNullOrEmpty(name) || name == ":name")
       {
-        var image = await _imageService.GetByName(name);
-        return Ok(image);
+        return BadRequest("The name cannot be null or empty.");
       }
       else
       {
-        return BadRequest("The name cannot be null or empty.");
+        var image = await _imageService.GetByName(name);
+        return Ok(image);
       }
     }
 

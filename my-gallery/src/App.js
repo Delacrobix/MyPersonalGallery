@@ -14,10 +14,10 @@ function App() {
       <Navbar />
       <div>
         <Routes>
-          <Route path='home/:tag/*' element={<ImageGallery />} />
+          <Route path='/home/:tag' element={<ImageGallery />} />
           <Route path='/home' element={<ImageGallery />} />
-          <Route path='images/:tag/:id/*' element={<ImageDetail />} />
-          <Route path='home/about' element={<AboutMe />} />
+          <Route path='/images/:tag/:title' element={<ImageDetail />} />
+          <Route path='/home/about' element={<AboutMe />} />
         </Routes>
       </div>
       <Footer />

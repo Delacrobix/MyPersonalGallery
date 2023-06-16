@@ -12,14 +12,36 @@ const ImageGallery = () => {
   const { tag } = useParams();
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     (async () => {
-      setIsLoading(true);
+      const cachedImages = localStorage.getItem('images');
 
-      const result = await getAllThumbnails();
+      let result = {};
 
-      setIsLoading(false);
+      if (cachedImages) {
+        setIsLoading(true);
+        result = JSON.parse(cachedImages);
+        setIsLoading(false);
+      } else {
+        setIsLoading(true);
+        result = await getAllThumbnails();
+
+        if (!result) {
+          setError(true);
+        }
+
+        try {
+          localStorage.setItem('images', JSON.stringify(result));
+          setIsLoading(false);
+        } catch (e) {
+          setError(true);
+          throw new Error('Error saving cache files.');
+        }
+      }
+
+      //Filter images when the user clicks on some category
       const data = filterImages(tag, result);
 
       let matrix = [];
@@ -64,7 +86,9 @@ const ImageGallery = () => {
 
   return (
     <div className='row-n'>
-      {isLoading ? (
+      {error ? (
+        <ErrorAlert />
+      ) : isLoading ? (
         <Loading />
       ) : (
         images.map((arr) => {
@@ -76,7 +100,7 @@ const ImageGallery = () => {
                     id={image.id}
                     imageData={image.imageData}
                     title={image.title}
-                    tag={tag}
+                    tag={image.tag}
                   />
                 );
               })}

@@ -1,18 +1,40 @@
 ﻿using MongoDB.Driver;
 using MyPersonalGallery.Models;
 using MetadataExtractor;
+using MyPersonalGallery.Redis;
+using System.Text.Json;
 
 namespace MyPersonalGallery.Services
 {
   public class ImageService : IImageService
   {
     private readonly IMongoCollection<MongoImage> _imagesUrl;
+    private readonly IRedisDB _redisDb;
 
-    public ImageService(IGallerySettings gallerySettings, IMongoClient mongoClient)
+    public ImageService(IGallerySettings gallerySettings, IMongoClient mongoClient, IRedisDB redisDb)
     {
-
       var database = mongoClient.GetDatabase(gallerySettings.Database);
       _imagesUrl = database.GetCollection<MongoImage>(gallerySettings.Collection);
+
+      _redisDb = redisDb;
+    }
+
+    public async Task<String> saveImagesToRedis(List<MongoImage> images)
+    {
+      var redisConnection = _redisDb.Connection.GetDatabase();
+      var jsonData = await redisConnection.StringGetAsync("0");
+
+      if (jsonData.IsNull)
+      {
+        string jsonString = JsonSerializer.Serialize(images);
+        await redisConnection.StringSetAsync("0", jsonString);
+
+        return jsonString;
+      }
+      else
+      {
+        return jsonData;
+      }
     }
 
     public async Task<IEnumerable<MongoImage>> GetAllImages()

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -282,34 +283,38 @@ body > #root > div {
   }
 }
 .row {
-  padding-top: 1%;
+  padding-top: 1rem;
   position: relative;
   justify-content: center;
 }
 .row .card {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 75%;
+  margin-bottom: 3rem;
 }
 .row .card .card-body {
   text-align: center;
 }
-.row .card .card-body #link-detail {
+.row .card .card-body .title-button-container {
+  margin: 1rem;
+}
+.row .card .card-body .title-button-container h3 {
+  font-size: 2.5rem;
+  font-family: "Pacifico", cursive;
+  color: aliceblue;
+  margin-bottom: 1.5rem;
+}
+.row .card .card-body .title-button-container #link-detail {
+  text-decoration: none;
   color: black;
   max-width: 100px;
-  background-color: aliceblue;
+  background-color: rgb(226, 226, 226);
   cursor: pointer;
-  border-radius: 5%;
-  padding: 5px;
+  border-radius: 10%;
+  padding: 0.5rem;
 }
-.row .card .card-body #link-detail h3 {
-  color: aliceblue;
-}
-.row .card .card-body #link-detail:hover {
-  transition: all 0.5s ease-in-out;
-  transform: scale(1.2);
+.row .card .card-body .title-button-container #link-detail:hover {
+  background-color: rgba(255, 255, 255, 0.699);
+  transition: all 0.3s ease-in-out;
 }
 
 .row-n {
