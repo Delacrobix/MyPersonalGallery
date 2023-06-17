@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.62bc7d64.css","mappings":"AAAA,oBAEE,4BAA8B,CAD9B,YAEF","sources":["index.css"],"sourcesContent":["body, body > #root > div {\n  height: 100vh;\n  background: #2d3436 !important;\n}"],"names":[],"sourceRoot":""}
