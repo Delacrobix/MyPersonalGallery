@@ -1,62 +1,62 @@
-//Footer
 @media screen and (max-width: 850px) {
+  //Footer
   .sub-footer-heading h1 {
     font-size: 44px;
     line-height: 50px;
   }
+
+  //About me
+  .about-container {
+    align-items: center;
+    font-size: 20px;
+
+    .text-container {
+      padding: 15px;
+      width: 50%;
+    }
+  }
+
+  //Navbar
+  .navbar-container {
+    a {
+      &:hover {
+        transform: scale(1.035);
+      }
+    }
+  }
+
+  //Image detail
+  .row {
+    .card {
+      max-width: 78%;
+    }
+  }
 }
 
 @media screen and (max-width: 550px) {
-  .sub-footer-heading h1 {
-    font-size: 34px;
-    line-height: 42px;
+  //Footer
+  .sub-footer {
+    &-links div {
+      margin: 1rem 0;
+    }
   }
 
-  .sub-footer-links div {
-    margin: 1rem 0;
+  //Image detail
+  .row {
+    .card {
+      max-width: 93%;
+
+      .card-body {
+        padding: 0;
+        padding-top: 1rem;
+      }
+    }
   }
 
-  .sub-footer-btn p {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .sub-footer-below {
-    flex-direction: column;
-    justify-content: left;
-  }
-
-  .sub-footer-below-links {
-    flex-direction: column;
-  }
-
-  .sub-footer-below-links p {
-    margin-left: 0rem;
-    margin-top: 1rem;
-  }
-}
-
-@media screen and (min-width: 400px) {
-  .sub-footer-heading h1 {
-    font-size: 27px;
-    line-height: 38px;
-  }
-}
-
-//About me
-@media screen and (max-width: 850px) {
+  //About me
   .about-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    font-size: 15px;
-    font-style: unset;
-  }
-
-  .text-container {
-    padding: 15px;
-    max-width: 90%;
-    border-radius: 10px;
+    .text-container {
+      width: 94%;
+    }
   }
 }

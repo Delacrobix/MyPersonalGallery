@@ -5,7 +5,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+    <nav className='navbar navbar-expand-lg navbar-container'>
       <div className='container'>
         <Link className='navbar-brand' to='/home'>
           My personal gallery

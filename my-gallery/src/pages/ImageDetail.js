@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getImage } from '../controllers/ImagesController';
+import { adaptiveImage } from '../assets/js/styles';
 import Loading from '../components/feedback/loading';
 import ErrorAlert from '../components/feedback/errorAlert';
 
@@ -30,6 +31,7 @@ const ImageDetail = () => {
     if (image) {
       setImagesUrl(`data:image/jpeg;base64,${image.imageData}`);
     }
+    adaptiveImage();
   }, [image]);
 
   return (
@@ -43,9 +45,14 @@ const ImageDetail = () => {
           <Loading />
         </div>
       ) : (
-        <div className='card bg-dark'>
-          <div className='card-body'>
-            <img src={imageUrl} alt={image.title} className='card-img-top' />
+        <div className='card' id='card-detailImage-container'>
+          <div className='card-body' id='card-body'>
+            <img
+              src={imageUrl}
+              alt={image.title}
+              className='card-img-top'
+              id='image-detail-img'
+            />
             <div className='title-button-container'>
               <h3>{image.title}</h3>
               <Link id='link-detail' to={`/home/${tag}`}>

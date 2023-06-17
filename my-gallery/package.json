@@ -32,7 +32,8 @@
     "docker:dev": "WATCHPACK_POLLING=true react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "sass-watch": "sass --watch src/assets/sass/main.scss src/assets/css/styles.css"
+    "sass-watch": "sass --watch src/assets/sass/main.scss src/assets/css/styles.css",
+    "dev": "concurrently \"npm run sass-watch\" \"npm start\""
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +59,7 @@
     "@babel/node": "^7.20.7",
     "@babel/plugin-transform-runtime": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
+    "concurrently": "^8.2.0",
     "gh-pages": "^5.0.0",
     "ncp": "^2.0.0",
     "nodemon": "^2.0.21",

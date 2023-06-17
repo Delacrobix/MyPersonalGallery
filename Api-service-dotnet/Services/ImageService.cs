@@ -104,7 +104,6 @@ namespace MyPersonalGallery.Services
       }
       else
       {
-        Console.WriteLine("Image: " + jsonImages);
         var image = JsonSerializer.Deserialize<MongoImage>(jsonImages);
         return image;
       }
@@ -141,8 +140,6 @@ namespace MyPersonalGallery.Services
       if (!String.IsNullOrEmpty(redisImages))
       {
         var thumbnails = JsonSerializer.Deserialize<List<MongoImage>>(redisImages);
-
-        Console.WriteLine("Thumbnails: " + thumbnails);
 
         return thumbnails;
       }
@@ -257,7 +254,6 @@ namespace MyPersonalGallery.Services
 
       if (!(imageRedis == null))
       {
-        Console.WriteLine("ImageRedis: " + imageRedis.Title);
         return imageRedis;
       }
       else

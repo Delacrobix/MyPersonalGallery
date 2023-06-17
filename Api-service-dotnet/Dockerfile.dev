@@ -11,5 +11,6 @@ RUN dotnet dev-certs https --trust
 COPY . .
 
 EXPOSE 7286
+EXPOSE 5108
 
-ENTRYPOINT dotnet watch run --urls=http://+:7286 --project MyPersonalGallery.csproj
+ENTRYPOINT dotnet watch run --urls=http://+:5108 --project MyPersonalGallery.csproj

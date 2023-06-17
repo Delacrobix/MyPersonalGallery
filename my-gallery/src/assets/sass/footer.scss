@@ -1,5 +1,5 @@
 .footer-container {
-  background-color: rgb(58, 58, 58);
+  background-color: $Onyx;
 
   .section-padding {
     padding: 4rem 4rem;
@@ -11,7 +11,7 @@
   }
 
   .footer-p a {
-    color: aliceblue;
+    color: $Alabaster;
     text-decoration: none;
 
     p {
@@ -37,7 +37,7 @@
       display: flex;
       justify-content: flex-start;
       flex-direction: column;
-      color: aliceblue;
+      color: $Alabaster;
 
       .social-media {
         display: flex;
@@ -48,7 +48,7 @@
         .footer-p {
           font-size: 13px;
           line-height: 15px;
-          color: aliceblue;
+          color: $Alabaster;
           font-weight: 600;
 
           img {

@@ -1,0 +1,21 @@
+.navbar-container {
+  background: $Onyx !important;
+
+  .navbar-brand:hover {
+    color: $Alabaster;
+  }
+
+  a {
+    color: $Alabaster;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: ease-in-out 0.2s;
+      color: $Alabaster;
+    }
+
+    &:visited {
+      color: #fff;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutMe = () => {
   return (
@@ -10,15 +11,18 @@ const AboutMe = () => {
             como programador. Las fotografías expuestas en esta aplicación son
             todas de la autoría de Jeffrey S. Rengifo Marin, no soy fotógrafo,
             simplemente me gusta capturar momentos. Invito al lector a visitar{' '}
-            <a
-              href='https://www.jeffrm.com.co'
+            <Link
+              to='https://www.jeffrm.com.co'
               target='_blank'
               rel='noopener noreferrer'
             >
               mi portafolio
-            </a>{' '}
+            </Link>{' '}
             como programador.
           </p>
+          <div className='h6-container-aboutme'>
+            <h6>Muchas gracias por visitar</h6>
+          </div>
         </div>
       </div>
     </div>
