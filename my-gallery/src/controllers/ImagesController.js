@@ -66,6 +66,42 @@ export function filterImages(tag, images) {
   return imagesFiltered;
 }
 
+export async function saveCache(files) {
+  try {
+    const cache = await caches.open('images-cache');
+
+    const jsonData = JSON.stringify(files);
+    const response = new Response(jsonData, {
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    await cache.put('thumbnails', response);
+  } catch (err) {
+    throw new Error('saving cache files: ' + err.message);
+  }
+}
+
+export async function getCache() {
+  try {
+    const cache = await caches.open('images-cache');
+    const response = await cache.match('thumbnails');
+
+    if (response) {
+      const contentType = response.headers.get('content-type');
+
+      if (contentType && contentType.includes('application/json')) {
+        const responseData = await response.json();
+
+        return responseData;
+      }
+    } else {
+      return response;
+    }
+  } catch (err) {
+    throw new Error('getting cache files: ' + err.message);
+  }
+}
+
 function filterByTag(tag, images) {
   let result = [];
 

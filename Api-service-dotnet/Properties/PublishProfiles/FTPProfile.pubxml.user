@@ -7,7 +7,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAB0gjOnJZRki/L3Hjid+HOgAAAAACAAAAAAAQZgAAAAEAACAAAAAGs6sENmx2+rk3d7VIWcfqVS4fMOw8e1oRB7t5DwLtnQAAAAAOgAAAAAIAACAAAAAem/hXBd7fo+6zB5KwxQFVMAt8MNqQW24Tm3Ox25cAiyAAAAA3i5qAt0y2qZK/SAUqO0HE2FZZaci/RPk7720IZLY4F0AAAAD35Rn+gQXXbHPPgnMv+qQ5DgF+6xyC7CsWEtbkjAzG49AgJFXScZdWp8rFf0+a3vMViqg/V3ajr35107g2fqjX</EncryptedPassword>
     <_PublishTargetUrl>ftp://198.37.116.30/www.MyGallery.somee.com</_PublishTargetUrl>
-    <History>True|2023-04-25T18:39:35.0754582Z;True|2023-04-09T12:38:49.8150922-05:00;</History>
+    <History>True|2023-06-17T23:01:14.7763028Z;False|2023-06-17T17:58:55.9494916-05:00;True|2023-04-25T13:39:35.0754582-05:00;True|2023-04-09T12:38:49.8150922-05:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -15,7 +15,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/10/2023 17:22:00</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>03/11/2023 18:14:00</publishTime>
+      <publishTime>06/17/2023 16:34:10</publishTime>
     </File>
     <File Include="AWSSDK.Core.dll">
       <publishTime>11/09/2022 11:47:34</publishTime>
@@ -26,8 +26,14 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="DnsClient.dll">
       <publishTime>06/10/2022 15:37:22</publishTime>
     </File>
+    <File Include="MetadataExtractor.dll">
+      <publishTime>05/07/2023 23:27:32</publishTime>
+    </File>
     <File Include="Microsoft.OpenApi.dll">
       <publishTime>08/29/2020 15:14:12</publishTime>
+    </File>
+    <File Include="Microsoft.Win32.SystemEvents.dll">
+      <publishTime>10/18/2022 11:20:10</publishTime>
     </File>
     <File Include="MongoDB.Bson.dll">
       <publishTime>01/27/2023 13:46:12</publishTime>
@@ -42,25 +48,43 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/21/2023 09:17:00</publishTime>
     </File>
     <File Include="MyPersonalGallery.deps.json">
-      <publishTime>04/25/2023 13:38:16</publishTime>
+      <publishTime>06/17/2023 17:59:34</publishTime>
     </File>
     <File Include="MyPersonalGallery.dll">
-      <publishTime>04/25/2023 13:38:16</publishTime>
+      <publishTime>06/17/2023 17:59:33</publishTime>
     </File>
     <File Include="MyPersonalGallery.exe">
-      <publishTime>04/25/2023 13:38:16</publishTime>
+      <publishTime>06/17/2023 17:59:33</publishTime>
     </File>
     <File Include="MyPersonalGallery.pdb">
-      <publishTime>04/25/2023 13:38:16</publishTime>
+      <publishTime>06/17/2023 17:59:33</publishTime>
     </File>
     <File Include="MyPersonalGallery.runtimeconfig.json">
-      <publishTime>04/09/2023 12:37:48</publishTime>
+      <publishTime>06/17/2023 16:44:17</publishTime>
+    </File>
+    <File Include="Pipelines.Sockets.Unofficial.dll">
+      <publishTime>11/13/2020 05:38:04</publishTime>
     </File>
     <File Include="runtimes/linux/native/libmongocrypt.so">
       <publishTime>01/20/2023 18:11:48</publishTime>
     </File>
     <File Include="runtimes/osx/native/libmongocrypt.dylib">
       <publishTime>01/20/2023 18:12:06</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll">
+      <publishTime>10/18/2022 11:23:26</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/net6.0/System.Drawing.Common.dll">
+      <publishTime>10/18/2022 11:26:24</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.0/System.Diagnostics.PerformanceCounter.dll">
+      <publishTime>10/19/2020 13:52:34</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll">
+      <publishTime>10/19/2020 13:53:36</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>10/19/2020 13:49:30</publishTime>
     </File>
     <File Include="runtimes/win/native/mongocrypt.dll">
       <publishTime>01/20/2023 18:11:14</publishTime>
@@ -71,6 +95,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Snappier.dll">
       <publishTime>01/23/2021 12:43:32</publishTime>
     </File>
+    <File Include="StackExchange.Redis.dll">
+      <publishTime>11/19/2020 03:40:58</publishTime>
+    </File>
     <File Include="Swashbuckle.AspNetCore.Swagger.dll">
       <publishTime>10/16/2021 07:54:10</publishTime>
     </File>
@@ -80,8 +107,29 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Swashbuckle.AspNetCore.SwaggerUI.dll">
       <publishTime>10/16/2021 07:54:30</publishTime>
     </File>
+    <File Include="System.Configuration.ConfigurationManager.dll">
+      <publishTime>10/19/2020 13:52:30</publishTime>
+    </File>
+    <File Include="System.Diagnostics.PerformanceCounter.dll">
+      <publishTime>10/19/2020 13:50:20</publishTime>
+    </File>
+    <File Include="System.Drawing.Common.dll">
+      <publishTime>10/18/2022 11:21:16</publishTime>
+    </File>
+    <File Include="System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>10/19/2020 13:52:26</publishTime>
+    </File>
+    <File Include="System.Security.Permissions.dll">
+      <publishTime>10/19/2020 13:52:36</publishTime>
+    </File>
+    <File Include="System.Windows.Extensions.dll">
+      <publishTime>10/19/2020 13:53:38</publishTime>
+    </File>
     <File Include="web.config">
-      <publishTime>04/25/2023 13:38:36</publishTime>
+      <publishTime>06/17/2023 17:59:44</publishTime>
+    </File>
+    <File Include="XmpCore.dll">
+      <publishTime>05/07/2021 10:17:56</publishTime>
     </File>
     <File Include="ZstdSharp.dll">
       <publishTime>08/02/2022 14:04:30</publishTime>

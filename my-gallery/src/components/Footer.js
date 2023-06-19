@@ -12,11 +12,11 @@ const Footer = () => {
         <div className='sub-footer section-padding'>
           <div className='sub-footer-links'>
             <div className='sub-footer-links-div'>
-              <h4 className='footer-h4'>Sitio construido por: </h4>
+              <h3 className='footer-title'>Sitio construido por: </h3>
               <p> Jeffrey S. Rerín</p>
             </div>
             <div className='sub-footer-links-div'>
-              <h4 className='footer-h4'>Redes sociales: </h4>
+              <h3 className='footer-title'>Redes sociales: </h3>
               <div className='social-media'>
                 <div className='footer-p'>
                   <Link

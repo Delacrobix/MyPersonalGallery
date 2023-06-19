@@ -28,8 +28,9 @@ body > #root > div {
   margin-bottom: 4rem;
 }
 .row .loading-container {
-  margin-top: -5rem;
-  margin-bottom: 18rem;
+  margin-top: -10%;
+  margin-bottom: 20%;
+  margin-left: -4%;
 }
 .row .card {
   margin-bottom: 3rem;
@@ -207,8 +208,8 @@ body > #root > div {
 .footer-container .sub-footer-links .sub-footer-links-div .social-media .portfolio-img {
   width: 33%;
 }
-.footer-container .sub-footer-links .sub-footer-links-div .footer-h4 {
-  font-size: 14px;
+.footer-container .sub-footer-links .sub-footer-links-div .footer-title {
+  font-size: 16px;
   line-height: 17px;
   margin-bottom: 0.9rem;
 }
@@ -362,10 +363,6 @@ body > #root > div {
   }
 }
 @media screen and (max-width: 850px) {
-  .sub-footer-heading h1 {
-    font-size: 44px;
-    line-height: 50px;
-  }
   .about-container {
     align-items: center;
     font-size: 20px;
@@ -374,16 +371,27 @@ body > #root > div {
     padding: 15px;
     width: 50%;
   }
+  .row-n .loading-container {
+    margin-left: 44%;
+  }
   .navbar-container a:hover {
     transform: scale(1.035);
   }
   .row .card {
     max-width: 78%;
   }
+  .row .loading-container {
+    margin-top: -5%;
+    margin-left: -2%;
+  }
 }
 @media screen and (max-width: 550px) {
-  .sub-footer-links div {
-    margin: 1rem 0;
+  .sub-footer-links .footer-title {
+    font-size: 1rem;
+  }
+  .sub-footer-links .social-media {
+    margin-top: -3%;
+    margin-left: -2%;
   }
   .row .card {
     max-width: 93%;
@@ -392,8 +400,16 @@ body > #root > div {
     padding: 0;
     padding-top: 1rem;
   }
+  .row-n .loading-container {
+    margin-left: 40%;
+  }
   .about-container .text-container {
     width: 94%;
+  }
+}
+@media screen and (max-width: 350px) {
+  .row-n .loading-container {
+    margin-left: 38%;
   }
 }
 

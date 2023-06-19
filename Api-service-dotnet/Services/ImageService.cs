@@ -1,18 +1,18 @@
 ﻿using MongoDB.Driver;
 using MyPersonalGallery.Models;
 using MetadataExtractor;
-using MyPersonalGallery.Redis;
 using System.Text.Json;
 using StackExchange.Redis;
+using System.Threading;
 
 namespace MyPersonalGallery.Services
 {
   public class ImageService : IImageService
   {
     private readonly IMongoCollection<MongoImage> _imagesUrl;
-    private readonly IRedisDB _redisDb;
+    private readonly IConnectionMultiplexer _redisDb;
 
-    public ImageService(IGallerySettings gallerySettings, IMongoClient mongoClient, IRedisDB redisDb)
+    public ImageService(IGallerySettings gallerySettings, IMongoClient mongoClient, IConnectionMultiplexer redisDb)
     {
       var database = mongoClient.GetDatabase(gallerySettings.Database);
       _imagesUrl = database.GetCollection<MongoImage>(gallerySettings.Collection);
@@ -74,23 +74,23 @@ namespace MyPersonalGallery.Services
     {
       var redisConnection = GetRedisDB();
 
-      try
-      {
-        var jsonData = await redisConnection.StringGetAsync(key);
+      // try
+      // {
+      var jsonData = await redisConnection.StringGetAsync(key);
 
-        if (jsonData.IsNull)
-        {
-          return "";
-        }
-        else
-        {
-          return jsonData;
-        }
-      }
-      catch (Exception e)
+      if (jsonData.IsNull)
       {
-        throw new Exception("Could not access to redis key: " + e.Message);
+        return "";
       }
+      else
+      {
+        return jsonData;
+      }
+      // }
+      // catch (Exception e)
+      // {
+      //   throw new Exception("Could not access to redis key: " + e.Message);
+      // }
     }
 
     public async Task<MongoImage> GetRedisFullScaleImageByKey(string key)
@@ -113,7 +113,8 @@ namespace MyPersonalGallery.Services
     {
       try
       {
-        return _redisDb.Connection.GetDatabase();
+        return _redisDb.GetDatabase();
+        // return Task.FromResult(_redisDb.GetDatabase());
       }
       catch (Exception e)
       {

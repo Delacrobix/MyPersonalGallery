@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const navigate = useNavigate();
-
   return (
     <nav className='navbar navbar-expand-lg navbar-container'>
       <div className='container'>
@@ -29,21 +27,17 @@ const Navbar = () => {
               </Link>
             </li>
             <div className='nav-item'>
-              <Link className='nav-link' to='/home/animals'>
+              <Link className='nav-link' to='/images/animals'>
                 Animals
               </Link>
             </div>
             <li className='nav-item'>
-              <Link className='nav-link' to='/home/people'>
+              <Link className='nav-link' to='/images/people'>
                 People
               </Link>
             </li>
             <li className='nav-item'>
-              <Link
-                className='nav-link'
-                onClick={() => navigate(`/home/others`)}
-                to='/home/others'
-              >
+              <Link className='nav-link' to='/images/others'>
                 Others
               </Link>
             </li>

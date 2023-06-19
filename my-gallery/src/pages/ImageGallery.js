@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { v4 as generateUid } from 'uuid';
 import {
   getAllThumbnails,
+  saveCache,
   filterImages,
+  getCache,
 } from '../controllers/ImagesController';
 import { useParams } from 'react-router-dom';
 import ImageCell from '../components/ImageCell';
@@ -18,7 +20,16 @@ const ImageGallery = () => {
   useEffect(() => {
     (async () => {
       setIsLoading(true);
-      const result = await getAllThumbnails();
+
+      const cache = await getCache();
+      var result;
+
+      if (cache) {
+        result = cache;
+      } else {
+        result = await getAllThumbnails();
+        await saveCache(result);
+      }
 
       if (!result) {
         setError(true);

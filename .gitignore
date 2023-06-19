@@ -1,0 +1,26 @@
+#General
+/.vscode
+
+# Dotnet service
+/Api-service-dotnet/bin
+/Api-service-dotnet/obj
+/Api-service-dotnet/.vscode
+/Api-service-dotnet/.vs
+/Api-service-dotnet/appsettings.json
+
+#React app
+/my-gallery/node_modules
+/my-gallery/.pnp
+/my-gallery/.pnp.js
+/my-gallery/coverage
+/my-gallery/build
+/my-gallery/.DS_Store
+/my-gallery/.env.local
+/my-gallery/.env.development.local
+/my-gallery/.env.test.local
+/my-gallery/.env.production.local
+/my-gallery/npm-debug.log*
+/my-gallery/yarn-debug.log*
+/my-gallery/yarn-error.log*
+/my-gallery/.env.local
+/my-gallery/.vscode

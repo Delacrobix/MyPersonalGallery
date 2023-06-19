@@ -1,10 +1,4 @@
 @media screen and (max-width: 850px) {
-  //Footer
-  .sub-footer-heading h1 {
-    font-size: 44px;
-    line-height: 50px;
-  }
-
   //About me
   .about-container {
     align-items: center;
@@ -13,6 +7,13 @@
     .text-container {
       padding: 15px;
       width: 50%;
+    }
+  }
+
+  //Image gallery
+  .row-n {
+    .loading-container {
+      margin-left: 44%;
     }
   }
 
@@ -30,14 +31,26 @@
     .card {
       max-width: 78%;
     }
+
+    .loading-container {
+      margin-top: -5%;
+      margin-left: -2%;
+    }
   }
 }
 
 @media screen and (max-width: 550px) {
   //Footer
   .sub-footer {
-    &-links div {
-      margin: 1rem 0;
+    &-links {
+      .footer-title {
+        font-size: 1rem;
+      }
+
+      .social-media {
+        margin-top: -3%;
+        margin-left: -2%;
+      }
     }
   }
 
@@ -53,10 +66,26 @@
     }
   }
 
+  //Image gallery
+  .row-n {
+    .loading-container {
+      margin-left: 40%;
+    }
+  }
+
   //About me
   .about-container {
     .text-container {
       width: 94%;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  //Image gallery
+  .row-n {
+    .loading-container {
+      margin-left: 38%;
     }
   }
 }
