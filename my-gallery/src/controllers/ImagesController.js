@@ -3,12 +3,11 @@ const SEVER = process.env.REACT_APP_BACKEND_URL;
 export async function getAllThumbnails() {
   let _data;
 
-  await fetch(`${SEVER}/api/images/getThumbnails`, {
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-  })
+  // headers: {
+  //   Accept: 'application/json',
+  //   'Content-Type': 'application/json',
+  // },
+  await fetch(`${SEVER}/api/images/getThumbnails`, {})
     .then((res) => {
       return res.json();
     })
@@ -26,12 +25,11 @@ export async function getAllThumbnails() {
 export async function getImage(title) {
   let _data;
 
-  await fetch(`${SEVER}/api/images/getByTitle/${title}`, {
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-  })
+  // headers: {
+  //   Accept: 'application/json',
+  //   'Content-Type': 'application/json',
+  // },
+  await fetch(`${SEVER}/api/images/getByTitle/${title}`, {})
     .then((res) => {
       return res.json();
     })
@@ -90,7 +88,11 @@ export async function getCache() {
       const contentType = response.headers.get('content-type');
 
       if (contentType && contentType.includes('application/json')) {
-        const responseData = await response.json();
+        var responseData;
+
+        if (response.body !== null) {
+          responseData = await response.json();
+        }
 
         return responseData;
       }

@@ -4,12 +4,20 @@ import { useNavigate } from 'react-router-dom';
 const ImageCell = (props) => {
   const navigate = useNavigate();
 
-  const { imageData, id, title, tag } = props;
+  const { imageData, id, title, tag, currentPath } = props;
 
   const imageUrl = `data:image/jpeg;base64,${imageData}`;
 
   function handleClick() {
-    navigate(`/images/${tag}/${title}`);
+    navigate(`/images/${tag}/${title}`, {
+      state: {
+        id: id,
+        imageData: imageData,
+        title: title,
+        tag: tag,
+        currentPath: currentPath,
+      },
+    });
   }
 
   return (

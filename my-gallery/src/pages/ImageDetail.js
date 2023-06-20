@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { getImage } from '../controllers/ImagesController';
 import { adaptiveImage } from '../assets/js/styles';
 import Loading from '../components/feedback/loading';
 import ErrorAlert from '../components/feedback/errorAlert';
 
 const ImageDetail = () => {
-  const { title, tag } = useParams();
+  const { title } = useParams();
+  const location = useLocation();
+  const props = location.state;
   const [imageUrl, setImagesUrl] = useState([]);
   const [image, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -15,7 +17,13 @@ const ImageDetail = () => {
   useEffect(() => {
     (async () => {
       setIsLoading(true);
-      const result = await getImage(title);
+
+      var result;
+      if (props) {
+        result = props;
+      } else {
+        result = await getImage(title);
+      }
 
       if (!result) {
         setError(true);
@@ -25,14 +33,17 @@ const ImageDetail = () => {
 
       setImages(result);
     })();
-  }, [title]);
+  }, [title, props]);
 
   useEffect(() => {
     if (image) {
       setImagesUrl(`data:image/jpeg;base64,${image.imageData}`);
     }
-    adaptiveImage();
   }, [image]);
+
+  function handleAdaptiveImage() {
+    adaptiveImage();
+  }
 
   return (
     <div className='row'>
@@ -52,10 +63,11 @@ const ImageDetail = () => {
               alt={image.title}
               className='card-img-top'
               id='image-detail-img'
+              onLoad={handleAdaptiveImage}
             />
             <div className='title-button-container'>
               <h3>{image.title}</h3>
-              <Link id='link-detail' to={`/home/${tag}`}>
+              <Link id='link-detail' to={props.currentPath}>
                 Regresar
               </Link>
             </div>

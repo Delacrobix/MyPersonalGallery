@@ -6,7 +6,7 @@ import {
   filterImages,
   getCache,
 } from '../controllers/ImagesController';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import ImageCell from '../components/ImageCell';
 import ErrorAlert from '../components/feedback/errorAlert';
 import Loading from '../components/feedback/loading';
@@ -16,6 +16,8 @@ const ImageGallery = () => {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   useEffect(() => {
     (async () => {
@@ -102,6 +104,7 @@ const ImageGallery = () => {
                     imageData={image.imageData}
                     title={image.title}
                     tag={image.tag}
+                    currentPath={currentPath}
                   />
                 );
               })}
