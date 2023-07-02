@@ -16,17 +16,3 @@ export function adaptiveImage() {
     cardContainer.style.width = `${imageWidth + imageWidth * 0.15}px`;
   }
 }
-
-// const observer = new MutationObserver(adaptiveImage);
-
-// // Configuración del observador para observar cambios en los atributos, texto y/o hijos del elemento
-// const config = {
-//   attributes: true,
-//   characterData: true,
-//   childList: true,
-//   subtree: true,
-//   attributeOldValue: true,
-//   characterDataOldValue: true,
-// };
-
-// observer.observe(cardContainer, config);

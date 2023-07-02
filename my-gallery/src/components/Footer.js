@@ -20,7 +20,7 @@ const Footer = () => {
               <div className='social-media'>
                 <div className='footer-p'>
                   <Link
-                    href='https://www.linkedin.com/in/jeffrey-rerin/'
+                    to='https://www.linkedin.com/in/jeffrey-rerin/'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
@@ -30,7 +30,7 @@ const Footer = () => {
                 </div>
                 <div className='footer-p'>
                   <Link
-                    href='https://github.com/Delacrobix'
+                    to='https://github.com/Delacrobix'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
@@ -40,7 +40,7 @@ const Footer = () => {
                 </div>
                 <div className='footer-p'>
                   <Link
-                    href='https://www.jeffrm.com.co'
+                    to='https://www.jeffrm.com.co'
                     target='_blank'
                     rel='noopener noreferrer'
                   >

@@ -8,7 +8,7 @@ This project was built for my portfolio as software developer. In this applicati
 ## :wrench: <strong>Built with:</strong>
 
 - ReactJS
-- APS .NET Core
+- ASP .NET Core
 - Redis
 - MongoDB
 - Sass
