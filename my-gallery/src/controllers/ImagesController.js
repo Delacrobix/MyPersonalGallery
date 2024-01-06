@@ -3,11 +3,12 @@ const SEVER = process.env.REACT_APP_BACKEND_URL;
 export async function getAllThumbnails() {
   let _data;
 
-  // headers: {
-  //   Accept: 'application/json',
-  //   'Content-Type': 'application/json',
-  // },
-  await fetch(`${SEVER}/api/images/getThumbnails`, {})
+  await fetch(`${SEVER}/api/images/getThumbnails`, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
     .then((res) => {
       return res.json();
     })

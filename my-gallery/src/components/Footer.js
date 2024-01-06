@@ -12,11 +12,11 @@ const Footer = () => {
         <div className='sub-footer section-padding'>
           <div className='sub-footer-links'>
             <div className='sub-footer-links-div'>
-              <h3 className='footer-title'>Sitio construido por: </h3>
+              <h3 className='footer-title'>Built by: </h3>
               <p> Jeffrey S. Rerín</p>
             </div>
             <div className='sub-footer-links-div'>
-              <h3 className='footer-title'>Redes sociales: </h3>
+              <h3 className='footer-title'>Social media: </h3>
               <div className='social-media'>
                 <div className='footer-p'>
                   <Link
@@ -44,7 +44,7 @@ const Footer = () => {
                     target='_blank'
                     rel='noopener noreferrer'
                   >
-                    <p>Portafolio</p>
+                    <p>Portfolio</p>
                     <img
                       className='footer-img portfolio-img'
                       src={myWebsite}
