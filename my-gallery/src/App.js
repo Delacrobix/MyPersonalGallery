@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className='bg-dark text-light'>
+    <div className=''>
       <Navbar />
       <div>
         <Routes>

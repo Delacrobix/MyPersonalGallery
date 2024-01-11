@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
 
+import './assets/css/index.css';
 import './assets/css/styles.css';
 
 const App = lazy(() => import('./App'));

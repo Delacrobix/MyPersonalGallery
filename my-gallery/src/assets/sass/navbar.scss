@@ -9,26 +9,22 @@
     text-transform: uppercase;
     transition: ease-in-out 0.2s;
 
-    &:hover {
+    &:visited {
       color: $Alabaster;
     }
   }
 
-  .navbar-brand:hover {
-    color: $Alabaster;
-  }
-
   ul {
     gap: 1rem;
+    visibility: visible;
 
     a {
-      color: $Alabaster;
       font-size: 1.3rem;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.15);
         transition: ease-in-out 0.2s;
-        color: $Alabaster;
+        color: #f0b5ed;
       }
 
       &:visited {

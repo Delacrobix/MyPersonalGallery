@@ -103,6 +103,7 @@ body > #root > div {
 }
 
 .about-container {
+  color: #f4eee0;
   margin-top: 3rem;
   margin-bottom: 3rem;
   font-family: "Nunito", sans-serif;
@@ -139,23 +140,20 @@ body > #root > div {
   text-transform: uppercase;
   transition: ease-in-out 0.2s;
 }
-.navbar-container .navbar-brand:hover {
-  color: #f4eee0;
-}
-.navbar-container .navbar-brand:hover {
+.navbar-container .navbar-brand:visited {
   color: #f4eee0;
 }
 .navbar-container ul {
   gap: 1rem;
+  visibility: visible;
 }
 .navbar-container ul a {
-  color: #f4eee0;
   font-size: 1.3rem;
 }
 .navbar-container ul a:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   transition: ease-in-out 0.2s;
-  color: #f4eee0;
+  color: #f0b5ed;
 }
 .navbar-container ul a:visited {
   color: #fff;
