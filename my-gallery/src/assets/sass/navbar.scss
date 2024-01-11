@@ -1,21 +1,39 @@
 .navbar-container {
   background: $Onyx !important;
 
+  .navbar-brand {
+    color: $Alabaster;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    transition: ease-in-out 0.2s;
+
+    &:hover {
+      color: $Alabaster;
+    }
+  }
+
   .navbar-brand:hover {
     color: $Alabaster;
   }
 
-  a {
-    color: $Alabaster;
+  ul {
+    gap: 1rem;
 
-    &:hover {
-      transform: scale(1.1);
-      transition: ease-in-out 0.2s;
+    a {
       color: $Alabaster;
-    }
+      font-size: 1.3rem;
 
-    &:visited {
-      color: #fff;
+      &:hover {
+        transform: scale(1.1);
+        transition: ease-in-out 0.2s;
+        color: $Alabaster;
+      }
+
+      &:visited {
+        color: #fff;
+      }
     }
   }
 }

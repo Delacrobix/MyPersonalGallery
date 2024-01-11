@@ -131,18 +131,33 @@ body > #root > div {
 .navbar-container {
   background: #393646 !important;
 }
+.navbar-container .navbar-brand {
+  color: #f4eee0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  transition: ease-in-out 0.2s;
+}
 .navbar-container .navbar-brand:hover {
   color: #f4eee0;
 }
-.navbar-container a {
+.navbar-container .navbar-brand:hover {
   color: #f4eee0;
 }
-.navbar-container a:hover {
+.navbar-container ul {
+  gap: 1rem;
+}
+.navbar-container ul a {
+  color: #f4eee0;
+  font-size: 1.3rem;
+}
+.navbar-container ul a:hover {
   transform: scale(1.1);
   transition: ease-in-out 0.2s;
   color: #f4eee0;
 }
-.navbar-container a:visited {
+.navbar-container ul a:visited {
   color: #fff;
 }
 

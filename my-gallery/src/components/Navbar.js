@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className='navbar navbar-expand-lg navbar-container'>
       <div className='container'>
         <Link className='navbar-brand' to='/home'>
-          My personal gallery
+          personal gallery
         </Link>
         <button
           className='navbar-toggler'
