@@ -7,6 +7,7 @@
 /Api-service-dotnet/.vscode
 /Api-service-dotnet/.vs
 /Api-service-dotnet/appsettings.json
+/Api-service-dotnet/out
 
 #React app
 /my-gallery/node_modules
@@ -24,3 +25,4 @@
 /my-gallery/yarn-error.log*
 /my-gallery/.env.local
 /my-gallery/.vscode
+/my-gallery/readme.md

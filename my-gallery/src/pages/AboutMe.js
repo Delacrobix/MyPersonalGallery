@@ -7,21 +7,21 @@ const AboutMe = () => {
       <div className='about-container'>
         <div className='text-container'>
           <p>
-            Este proyecto fue construido con el objetivo de mejorar mis skills
-            como programador. Las fotografías expuestas en esta aplicación son
-            todas de la autoría de Jeffrey S. Rengifo Marin, no soy fotógrafo,
-            simplemente me gusta capturar momentos. Invito al lector a visitar{' '}
+            I'm just a guy who likes to capture moments and share it for all.
+          </p>
+          <div className=''></div>
+          <p>
+            {`Whit love, `}
             <Link
               to='https://www.jeffrm.com.co'
               target='_blank'
               rel='noopener noreferrer'
             >
-              mi portafolio
-            </Link>{' '}
-            como programador.
+              Jeff Rerín
+            </Link>
           </p>
           <div className='h6-container-aboutme'>
-            <h6>Muchas gracias por visitar</h6>
+            <h6>Thank you for your visit</h6>
           </div>
         </div>
       </div>

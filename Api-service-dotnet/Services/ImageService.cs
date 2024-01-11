@@ -3,7 +3,6 @@ using MyPersonalGallery.Models;
 using MetadataExtractor;
 using System.Text.Json;
 using StackExchange.Redis;
-using System.Threading;
 
 namespace MyPersonalGallery.Services
 {
@@ -74,23 +73,23 @@ namespace MyPersonalGallery.Services
     {
       var redisConnection = GetRedisDB();
 
-      // try
-      // {
-      var jsonData = await redisConnection.StringGetAsync(key);
+      try
+      {
+        var jsonData = await redisConnection.StringGetAsync(key);
 
-      if (jsonData.IsNull)
-      {
-        return "";
+        if (jsonData.IsNull)
+        {
+          return "";
+        }
+        else
+        {
+          return jsonData;
+        }
       }
-      else
+      catch (Exception e)
       {
-        return jsonData;
+        throw new Exception("Could not access to redis key: " + e.Message);
       }
-      // }
-      // catch (Exception e)
-      // {
-      //   throw new Exception("Could not access to redis key: " + e.Message);
-      // }
     }
 
     public async Task<MongoImage> GetRedisFullScaleImageByKey(string key)
